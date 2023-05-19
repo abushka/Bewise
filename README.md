@@ -28,7 +28,7 @@
 который нам отправил пользователь, при этом если у нас уже есть к примеру 5 уникальных вопросов в unique_questions,
 то мы делая `questions_num - len(unique_questions)` отправляем запрос `https://jservice.io/api/random?count=5`
 
-Использованы docker-compose, SQLAalchemy,  пользоваться аннотацией типов.
+Использованы docker-compose, SQLAalchemy,  пользовался аннотацией типов.
 
 
 # Dockerfile
