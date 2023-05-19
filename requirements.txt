@@ -1,0 +1,7 @@
+flask==2.2.3
+flask_sqlalchemy==3.0.3
+flask_cors==3.0.10
+waitress==2.1.2
+psycopg2==2.9.6
+requests==2.26.0
+python-dotenv==1.0.0
