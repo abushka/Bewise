@@ -20,7 +20,7 @@
     
         while len(unique_questions) < questions_num:
     
-        response = requests.get(f'https://jservice.io/api/random?count={questions_num - len(unique_questions)}')
+            response = requests.get(f'https://jservice.io/api/random?count={questions_num - len(unique_questions)}')
         
         
 Объясняю, если к примеру пользователь отправил нам questions_num со значением `10`,
