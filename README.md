@@ -8,26 +8,33 @@
 
 Dockerfile в данном репозитории определяет контейнер для запуска веб-сервиса. Он устанавливает необходимые зависимости, копирует приложение внутрь контейнера и указывает команду для его запуска.
 
-Определение базового образа 
+Определение базового образа
+
 `FROM python:3.9-slim`
 
-Установка зависимостей для psycopg2
+Установка зависимостей для psycopg
+
 `RUN apt-get update \
     && apt-get install -y postgresql-client libpq-dev gcc`
 
 Создание рабочей директории /app
+
 `WORKDIR /app`
 
 Копирование файла requirements.txt 
+
 `COPY requirements.txt .`
 
 Установка зависимостей, указанных в файле requirements.txt
+
 `RUN pip install --no-cache-dir -r requirements.txt`
 
 Копирование приложения
+
 `COPY . .`
 
 Запуск приложения
+
 `CMD ["python", "app.py"]`
 
 
