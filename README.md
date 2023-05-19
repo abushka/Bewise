@@ -16,14 +16,16 @@
 В случае, если в БД имеется такой же вопрос, к публичному API с викторинами выполняются дополнительные запросы до тех пор, пока не будет получен уникальный вопрос для викторины.
 В app.py я использовал
 
-```unique_questions = []
-    
+`unique_questions = []
     while len(unique_questions) < questions_num:
+        response = requests.get(f'https://jservice.io/api/random?count={questions_num - len(unique_questions)}')`
         
-        response = requests.get(f'https://jservice.io/api/random?count={questions_num - len(unique_questions)}')```
-        
-Объясняю, если к примеру пользователь отправил нам questions_num со значением `10`, то мы отправляем запрос в публичный API, до тех пор пока значение списка уникальных вопросов не будет равно questions_num, который нам отправил пользователь, при этом если у нас уже есть к примеру 5 уникальных вопросов в unique_questions, то мы делая `questions_num - len(unique_questions)` отправляем запрос `https://jservice.io/api/random?count=5`
-Желательно, если при выполнении задания вы будете использовать docker-compose, SQLAalchemy,  пользоваться аннотацией типов.
+Объясняю, если к примеру пользователь отправил нам questions_num со значением `10`,
+то мы отправляем запрос в публичный API, до тех пор пока значение списка уникальных вопросов не будет равно questions_num,
+который нам отправил пользователь, при этом если у нас уже есть к примеру 5 уникальных вопросов в unique_questions,
+то мы делая `questions_num - len(unique_questions)` отправляем запрос `https://jservice.io/api/random?count=5`
+
+Использованы docker-compose, SQLAalchemy,  пользоваться аннотацией типов.
 
 
 # Dockerfile
